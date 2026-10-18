@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mojang · MC 26.2服务器</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url("https://i.imgur.com/7QZJPT6.png");
+            background-repeat: repeat;
+            background-color:#5a8b3c;
+            color:#fff;
+        }
+        header{
+            background:#3a3a3a;
+            border-bottom:8px solid #222;
+            padding:30px;
+            text-align:center;
+        }
+        h1{
+            font-size:42px;
+            letter-spacing:2px;
+            color:#70c849;
+            text-shadow: 3px 3px #222;
+        }
+        .subtitle{
+            margin-top:10px;
+            font-size:18px;
+            color:#ddd;
+        }
+        .container{
+            max-width:1000px;
+            margin:40px auto;
+            padding:0 20px;
+        }
+        .card{
+            background:rgba(40,40,40,0.92);
+            border:4px solid #111;
+            border-radius:6px;
+            padding:25px;
+            margin-bottom:25px;
+        }
+        h2{
+            color:#70c849;
+            margin-bottom:15px;
+        }
+        p{
+            line-height:1.8;
+            font-size:16px;
+            color:#eeeeee;
+        }
+        .btn{
+            display:block;
+            width:fit-content;
+            margin:20px auto;
+            padding:14px 30px;
+            background:#70c849;
+            color:#111;
+            text-decoration:none;
+            font-weight:bold;
+            font-size:20px;
+            border:4px solid #222;
+        }
+        .btn:hover{
+            background:#8de85c;
+        }
+        .shop-grid{
+            display:grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
+            gap:18px;
+            margin-top:20px;
+        }
+        /* 商品卡片样式 + 鼠标悬浮效果，提示可以点击 */
+        .item{
+            background:#282828;
+            border:2px solid #111;
+            padding:18px;
+            text-align:center;
+            cursor:pointer;
+            transition: 0.2s;
+        }
+        .item:hover{
+            border:2px solid #70c849;
+            transform: translateY(-4px);
+        }
+        .price{
+            color:#ffd700;
+            font-size:19px;
+            margin:10px 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>MOJANG MINECRAFT</h1>
+        <div class="subtitle">🎮 26.2 Java版服务器</div>
+    </header>
+    <div class="container">
+        <div class="card">
+            <h2>📡服务器信息</h2>
+            <p>✅游戏版本：Minecraft Java 26.2</p>
+            <p>✅服务器特色：钻石GUI商店系统，自定义交易</p>
+            <a class="btn" href="https://www.minecraft.net" target="_blank">👉跳转 Minecraft官网</a>
+        </div>
+        <div class="card">
+            <h2>🛒商店商品列表（点击商品查看详情）</h2>
+            <div class="shop-grid">
+                <!-- 可点击商品1：下界合金锭 -->
+                <div class="item" onclick="buyItem('下界合金锭',3)">
+                    <h3>下界合金锭</h3>
+                    <div class="price">3钻石</div>
+                    <p>高级装备材料</p>
+                </div>
+                <!-- 可点击商品2：钻石块 -->
+                <div class="item" onclick="buyItem('钻石块',9)">
+                    <h3>钻石块</h3>
+                    <div class="price">9钻石</div>
+                    <p>建筑装饰方块</p>
+                </div>
+                <!-- 可点击商品3：附魔金苹果 -->
+                <div class="item" onclick="buyItem('附魔金苹果',12)">
+                    <h3>附魔金苹果</h3>
+                    <div class="price">12钻石</div>
+                    <p>强力增益道具</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        //点击商品触发弹窗
+        function buyItem(name,cost){
+            alert(`你选中了【${name}】\n需要花费：${cost} 钻石`);
+        }
+    </script>
+</body>
+</html>
